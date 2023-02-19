@@ -1,0 +1,14 @@
+Token = 'patV6dMo7QJQJO7uj.cbe61b3d9e99b00398c54ece8db67123194e78d8d9abf16bb46b8ab1ee407995'
+BaseID= 'appBe0uXuZ6y5K5qh'
+
+URL = 'https://api.airtable.com/v0/'+BaseID+'/info'
+headers = {'Authorization':'Bearer '+Token}
+import requests
+
+
+r = requests.get(URL,headers = headers)
+print(r.status_code)
+data = r.json()
+value = data['records'][0]['fields']['value']
+print(value)
+
